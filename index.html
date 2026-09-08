@@ -1,0 +1,2126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday, Nanna ❤️</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #faf6f0;
+    color: #4b382d;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   INTRO SCREEN
+========================================================= */
+
+#introScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.9), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(255,220,180,.5), transparent 35%),
+        linear-gradient(135deg, #f7e8d5, #fff8ef);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.intro-content {
+    padding: 30px;
+    animation: introFloat 3s ease-in-out infinite;
+}
+
+.intro-small {
+    font-size: 15px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #977158;
+    margin-bottom: 25px;
+}
+
+.intro-title {
+    font-size: clamp(45px, 9vw, 90px);
+    color: #654737;
+    margin-bottom: 15px;
+}
+
+.intro-heart {
+    font-size: 50px;
+    margin-bottom: 30px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.intro-button {
+    border: none;
+    padding: 16px 35px;
+    border-radius: 40px;
+    background: #795548;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(90,60,40,.25);
+    transition: .3s;
+}
+
+.intro-button:hover {
+    transform: translateY(-4px) scale(1.03);
+    background: #604438;
+}
+
+@keyframes introFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.18); }
+}
+
+
+/* =========================================================
+   CELEBRATION SCREEN
+========================================================= */
+
+#celebrationScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background:
+        radial-gradient(circle at center, #fff8ef 0%, #f5e2cc 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s ease;
+}
+
+#celebrationScreen.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.celebration-content {
+    padding: 30px;
+}
+
+.cake {
+    font-size: 90px;
+    margin-bottom: 15px;
+    animation: cakeBounce 1.5s infinite;
+}
+
+.celebration-content h1 {
+    font-size: clamp(40px, 8vw, 80px);
+    color: #67483a;
+    margin-bottom: 15px;
+}
+
+.celebration-content p {
+    font-size: 21px;
+    color: #876b59;
+    margin-bottom: 30px;
+}
+
+.enter-button {
+    padding: 15px 35px;
+    border: none;
+    border-radius: 35px;
+    background: #795548;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.enter-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(90,60,40,.25);
+}
+
+@keyframes cakeBounce {
+    0%,100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(250,246,240,.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(120,90,65,.12);
+}
+
+.nav-logo {
+    font-size: 21px;
+    font-weight: bold;
+    color: #67483a;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links button {
+    border: none;
+    background: none;
+    color: #6e5546;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.nav-links button:hover {
+    color: #a16c4e;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+section {
+    min-height: 100vh;
+    padding: 110px 25px 80px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    font-size: 30px;
+}
+
+.section-title h2 {
+    font-size: clamp(32px, 5vw, 52px);
+    color: #614538;
+    margin: 10px 0;
+}
+
+.section-title p {
+    color: #947764;
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+#home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at 15% 25%, rgba(220,190,155,.25), transparent 25%),
+        radial-gradient(circle at 85% 70%, rgba(230,200,165,.28), transparent 30%),
+        #faf6f0;
+}
+
+.hero {
+    max-width: 900px;
+}
+
+.hero-small {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #9a755d;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 11vw, 120px);
+    line-height: .95;
+    color: #5c4033;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #a46e4e;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    color: #81695a;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.scroll-note {
+    margin-top: 50px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #a98c78;
+}
+
+
+/* =========================================================
+   CINEMATIC SLIDESHOW
+========================================================= */
+
+#gallery {
+    background: #f3ece4;
+    position: relative;
+}
+
+.slideshow-wrapper {
+    width: min(1050px, 95%);
+    margin: auto;
+    position: relative;
+}
+
+/* Main cinematic frame */
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: min(650px, 72vh);
+    min-height: 430px;
+    overflow: hidden;
+    border-radius: 28px;
+    background: #2e2520;
+    box-shadow:
+        0 25px 60px rgba(55,40,30,.25),
+        0 5px 20px rgba(55,40,30,.15);
+}
+
+/* Blurred background */
+
+.slide-bg {
+    position: absolute;
+    inset: -35px;
+    background-position: center;
+    background-size: cover;
+    filter: blur(28px);
+    transform: scale(1.15);
+    opacity: .65;
+    transition:
+        background-image .8s ease,
+        opacity .8s ease;
+}
+
+/* Dark overlay */
+
+.slide-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.30),
+            transparent 25%,
+            transparent 75%,
+            rgba(0,0,0,.30)
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.30),
+            transparent 30%
+        );
+    z-index: 2;
+}
+
+/* Main image */
+
+.slide-image {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 88%;
+    max-height: 88%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 15px 45px rgba(0,0,0,.35);
+    opacity: 0;
+    transition:
+        opacity .8s ease,
+        transform 1s ease;
+}
+
+.slide-image.active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.slide-image.enter {
+    transform: translate(-50%, -50%) scale(1.04);
+}
+
+/* arrows */
+
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 50%;
+    background: rgba(255,255,255,.18);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.slide-btn:hover {
+    background: rgba(255,255,255,.9);
+    color: #604438;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+    left: 22px;
+}
+
+.next {
+    right: 22px;
+}
+
+/* slide number */
+
+.slide-number {
+    position: absolute;
+    z-index: 5;
+    top: 22px;
+    right: 25px;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 2px;
+    background: rgba(0,0,0,.25);
+    backdrop-filter: blur(8px);
+    padding: 8px 13px;
+    border-radius: 20px;
+}
+
+/* bottom caption */
+
+.slide-caption {
+    position: absolute;
+    z-index: 5;
+    left: 35px;
+    bottom: 30px;
+    color: white;
+    font-size: 17px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(0,0,0,.7);
+}
+
+/* dots */
+
+.dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin-top: 22px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: none;
+    background: #c8b5a5;
+    cursor: pointer;
+    transition: .35s;
+}
+
+.dot.active {
+    width: 28px;
+    border-radius: 10px;
+    background: #795548;
+}
+
+.slide-hint {
+    text-align: center;
+    color: #927967;
+    font-size: 14px;
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+#timeline {
+    background: #faf6f0;
+}
+
+.timeline {
+    max-width: 850px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #d8c4b2;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    width: 50%;
+    padding: 20px 45px;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: 50%;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 30px;
+    width: 14px;
+    height: 14px;
+    background: #8a6049;
+    border-radius: 50%;
+    border: 3px solid #faf6f0;
+    box-shadow: 0 0 0 2px #c9b3a0;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -7px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -7px;
+}
+
+.timeline-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(70,50,35,.08);
+}
+
+.timeline-card h3 {
+    color: #795548;
+    margin-bottom: 8px;
+}
+
+.timeline-card p {
+    line-height: 1.7;
+    color: #806b5c;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+#message {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        linear-gradient(
+            135deg,
+            #f1e1d1,
+            #fff9f2
+        );
+}
+
+.message-card {
+    width: min(750px, 92%);
+    background: rgba(255,255,255,.72);
+    backdrop-filter: blur(15px);
+    padding: 60px 50px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(80,55,35,.12);
+    border: 1px solid rgba(255,255,255,.8);
+}
+
+.message-card .quote {
+    font-size: 60px;
+    color: #b0886d;
+    line-height: .5;
+}
+
+.message-card p {
+    font-size: 25px;
+    line-height: 1.8;
+    color: #674a3b;
+    margin: 25px 0;
+}
+
+.signature {
+    color: #9b7257;
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+#quiz {
+    background: #f5eee7;
+}
+
+.quiz-container {
+    max-width: 750px;
+    margin: auto;
+}
+
+.quiz-card {
+    background: white;
+    border-radius: 25px;
+    padding: 35px;
+    margin-bottom: 22px;
+    box-shadow: 0 8px 25px rgba(70,50,35,.08);
+}
+
+.quiz-card h3 {
+    color: #624738;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.option {
+    display: block;
+    width: 100%;
+    padding: 14px 18px;
+    margin: 10px 0;
+    border-radius: 12px;
+    border: 1px solid #e1d4c8;
+    background: #fffaf5;
+    color: #6c5546;
+    text-align: left;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.option:hover {
+    background: #f2e4d7;
+    transform: translateX(3px);
+}
+
+.option.selected {
+    background: #795548;
+    color: white;
+    border-color: #795548;
+}
+
+.quiz-submit {
+    display: block;
+    margin: 30px auto;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 35px;
+    background: #795548;
+    color: white;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.quiz-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #795548;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 45px 20px;
+    text-align: center;
+    background: #4d382d;
+    color: #eadbcd;
+}
+
+footer p {
+    margin: 7px;
+}
+
+.footer-heart {
+    font-size: 25px;
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+.confetti {
+    position: fixed;
+    width: 8px;
+    height: 13px;
+    top: -20px;
+    z-index: 10000;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+}
+
+
+/* =========================================================
+   ADMIN
+========================================================= */
+
+.admin-trigger {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: transparent;
+    opacity: .15;
+    cursor: pointer;
+}
+
+.admin-panel {
+    position: fixed;
+    inset: 0;
+    z-index: 11000;
+    background: rgba(30,20,15,.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.admin-box {
+    background: white;
+    width: min(600px, 95%);
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 35px;
+    border-radius: 25px;
+}
+
+.admin-box h2 {
+    margin-bottom: 20px;
+    color: #604438;
+}
+
+.admin-box input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.admin-box button {
+    padding: 11px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #795548;
+    color: white;
+    cursor: pointer;
+}
+
+.response-item {
+    padding: 15px;
+    margin: 12px 0;
+    background: #f6eee7;
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 13px 18px;
+    }
+
+    .nav-logo {
+        font-size: 17px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links button {
+        font-size: 11px;
+    }
+
+    section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .slideshow {
+        height: 470px;
+        min-height: 0;
+        border-radius: 20px;
+    }
+
+    .slide-image {
+        max-width: 82%;
+        max-height: 78%;
+    }
+
+    .slide-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .prev {
+        left: 12px;
+    }
+
+    .next {
+        right: 12px;
+    }
+
+    .slide-caption {
+        left: 20px;
+        bottom: 20px;
+        font-size: 14px;
+    }
+
+    .timeline::before {
+        left: 12px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 40px;
+        padding-right: 5px;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 5px;
+        right: auto;
+    }
+
+    .message-card {
+        padding: 40px 25px;
+    }
+
+    .message-card p {
+        font-size: 20px;
+    }
+
+    .quiz-card {
+        padding: 25px 20px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     INTRO
+======================================================= -->
+
+<div id="introScreen">
+
+    <div class="intro-content">
+
+        <div class="intro-small">
+            A little something for
+        </div>
+
+        <div class="intro-title">
+            Nanna
+        </div>
+
+        <div class="intro-heart">
+            ❤️
+        </div>
+
+        <button class="intro-button" onclick="startBirthday()">
+            Click here, Nanna
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =======================================================
+     CELEBRATION
+======================================================= -->
+
+<div id="celebrationScreen">
+
+    <div class="celebration-content">
+
+        <div class="cake">
+            🎂
+        </div>
+
+        <h1>
+            Happy Birthday, Nanna!
+        </h1>
+
+        <p>
+            Narayana — today is all about you ❤️
+        </p>
+
+        <button class="enter-button" onclick="enterWebsite()">
+            Come on in →
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =======================================================
+     NAVIGATION
+======================================================= -->
+
+<nav>
+
+    <div class="nav-logo">
+        Nanna ❤️
+    </div>
+
+    <div class="nav-links">
+
+        <button onclick="goTo('home')">
+            Home
+        </button>
+
+        <button onclick="goTo('gallery')">
+            Memories
+        </button>
+
+        <button onclick="goTo('timeline')">
+            Story
+        </button>
+
+        <button onclick="goTo('message')">
+            Message
+        </button>
+
+        <button onclick="goTo('quiz')">
+            Quiz
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- =======================================================
+     HOME
+======================================================= -->
+
+<section id="home">
+
+    <div class="hero">
+
+        <div class="hero-small">
+            A special day for someone special
+        </div>
+
+        <h1>
+            Happy Birthday<br>
+            <span>Nanna ❤️</span>
+        </h1>
+
+        <p>
+            Today is a little celebration of you,
+            the memories we've made, and all the
+            beautiful moments still waiting for us.
+        </p>
+
+        <div class="scroll-note">
+            ↓ SCROLL TO SEE YOUR MEMORIES ↓
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     GALLERY
+======================================================= -->
+
+<section id="gallery">
+
+    <div class="section-title">
+
+        <span>📸</span>
+
+        <h2>
+            Our Memories
+        </h2>
+
+        <p>
+            A few special moments with Nanna ❤️
+        </p>
+
+    </div>
+
+
+    <div class="slideshow-wrapper">
+
+        <div class="slideshow">
+
+            <!-- Blurred background -->
+            <div
+                class="slide-bg"
+                id="slideBackground">
+            </div>
+
+
+            <!-- Overlay -->
+            <div class="slide-overlay"></div>
+
+
+            <!-- Images -->
+
+            <img
+                class="slide-image active"
+                id="slideImage"
+                src="photos/photo 1.jpeg"
+                alt="Memory 1">
+
+
+            <!-- Previous -->
+
+            <button
+                class="slide-btn prev"
+                onclick="changeSlide(-1)">
+                ❮
+            </button>
+
+
+            <!-- Next -->
+
+            <button
+                class="slide-btn next"
+                onclick="changeSlide(1)">
+                ❯
+            </button>
+
+
+            <!-- Number -->
+
+            <div
+                class="slide-number"
+                id="slideNumber">
+                1 / 6
+            </div>
+
+
+            <!-- Caption -->
+
+            <div
+                class="slide-caption"
+                id="slideCaption">
+                A beautiful memory ❤️
+            </div>
+
+        </div>
+
+
+        <!-- Dots -->
+
+        <div class="dots">
+
+            <button
+                class="dot active"
+                onclick="showSlide(0)">
+            </button>
+
+            <button
+                class="dot"
+                onclick="showSlide(1)">
+            </button>
+
+            <button
+                class="dot"
+                onclick="showSlide(2)">
+            </button>
+
+            <button
+                class="dot"
+                onclick="showSlide(3)">
+            </button>
+
+            <button
+                class="dot"
+                onclick="showSlide(4)">
+            </button>
+
+            <button
+                class="dot"
+                onclick="showSlide(5)">
+            </button>
+
+        </div>
+
+
+        <div class="slide-hint">
+            ✨ Photos change automatically every 5 seconds ✨
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     TIMELINE
+======================================================= -->
+
+<section id="timeline">
+
+    <div class="section-title">
+
+        <span>❤️</span>
+
+        <h2>
+            A Little Story
+        </h2>
+
+        <p>
+            Family • Memories • Today
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+
+                <h3>
+                    Family
+                </h3>
+
+                <p>
+                    The people who make ordinary moments
+                    feel special and turn a house into home.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+
+                <h3>
+                    Memories
+                </h3>
+
+                <p>
+                    Every photo carries a little piece
+                    of the memories we've shared together.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+
+                <h3>
+                    Today
+                </h3>
+
+                <p>
+                    Today we celebrate you, Nanna,
+                    and everything that makes you so special.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     MESSAGE
+======================================================= -->
+
+<section id="message">
+
+    <div class="message-card">
+
+        <div class="quote">
+            “
+        </div>
+
+        <p>
+            happy birthday nanna, thanks for annitiki you gave.
+        </p>
+
+        <div class="signature">
+            With love, Pallavi & Tulsi ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     QUIZ
+======================================================= -->
+
+<section id="quiz">
+
+    <div class="section-title">
+
+        <span>📝</span>
+
+        <h2>
+            How Well Do You Know Yourself?
+        </h2>
+
+        <p>
+            Let's see how many you get right, Nanna 😄
+        </p>
+
+    </div>
+
+
+    <div class="quiz-container">
+
+
+        <!-- Q1 -->
+
+        <div class="quiz-card">
+
+            <h3>
+                1. What is your favourite food?
+            </h3>
+
+            <button
+                class="option"
+                data-question="q1"
+                onclick="selectOption(this,'q1','Biryani')">
+                Biryani
+            </button>
+
+            <button
+                class="option"
+                data-question="q1"
+                onclick="selectOption(this,'q1','Dosa chicken curry')">
+                Dosa chicken curry
+            </button>
+
+            <button
+                class="option"
+                data-question="q1"
+                onclick="selectOption(this,'q1','Egg thiyakura')">
+                Egg thiyakura
+            </button>
+
+        </div>
+
+
+        <!-- Q2 -->
+
+        <div class="quiz-card">
+
+            <h3>
+                2. What is your favourite place you want to visit?
+            </h3>
+
+            <button
+                class="option"
+                data-question="q2"
+                onclick="selectOption(this,'q2','Foreign country')">
+                Foreign country
+            </button>
+
+            <button
+                class="option"
+                data-question="q2"
+                onclick="selectOption(this,'q2','Kerala')">
+                Kerala
+            </button>
+
+            <button
+                class="option"
+                data-question="q2"
+                onclick="selectOption(this,'q2','Ramalingapuram')">
+                Ramalingapuram
+            </button>
+
+        </div>
+
+
+        <!-- Q3 -->
+
+        <div class="quiz-card">
+
+            <h3>
+                3. Which car do you want to buy?
+            </h3>
+
+            <button
+                class="option"
+                data-question="q3"
+                onclick="selectOption(this,'q3','Audi')">
+                Audi
+            </button>
+
+            <button
+                class="option"
+                data-question="q3"
+                onclick="selectOption(this,'q3','Benz')">
+                Benz
+            </button>
+
+            <button
+                class="option"
+                data-question="q3"
+                onclick="selectOption(this,'q3','Toyota')">
+                Toyota
+            </button>
+
+        </div>
+
+
+        <!-- Q4 -->
+
+        <div class="quiz-card">
+
+            <h3>
+                4. What is your favourite shirt brand?
+            </h3>
+
+            <button
+                class="option"
+                data-question="q4"
+                onclick="selectOption(this,'q4','Allen Solly')">
+                Allen Solly
+            </button>
+
+            <button
+                class="option"
+                data-question="q4"
+                onclick="selectOption(this,'q4','Lenin Shirts')">
+                Lenin Shirts
+            </button>
+
+            <button
+                class="option"
+                data-question="q4"
+                onclick="selectOption(this,'q4','Levis')">
+                Levis
+            </button>
+
+        </div>
+
+
+        <!-- Q5 -->
+
+        <div class="quiz-card">
+
+            <h3>
+                5. What is your favourite sweet?
+            </h3>
+
+            <button
+                class="option"
+                data-question="q5"
+                onclick="selectOption(this,'q5','Malai Kaja')">
+                Malai Kaja
+            </button>
+
+            <button
+                class="option"
+                data-question="q5"
+                onclick="selectOption(this,'q5','Gulab Jamun')">
+                Gulab Jamun
+            </button>
+
+            <button
+                class="option"
+                data-question="q5"
+                onclick="selectOption(this,'q5','All')">
+                All
+            </button>
+
+        </div>
+
+
+        <button
+            class="quiz-submit"
+            onclick="submitQuiz()">
+            Submit Answers ❤️
+        </button>
+
+        <div
+            class="quiz-message"
+            id="quizMessage">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+    <div class="footer-heart">
+        ❤️
+    </div>
+
+    <p>
+        Made with love for Nanna
+    </p>
+
+    <p>
+        Happy Birthday, Narayana 🎂
+    </p>
+
+</footer>
+
+
+<!-- =======================================================
+     ADMIN BUTTON
+======================================================= -->
+
+<button
+    class="admin-trigger"
+    onclick="openAdmin()"
+    title="Admin">
+</button>
+
+
+<!-- =======================================================
+     ADMIN PANEL
+======================================================= -->
+
+<div
+    class="admin-panel"
+    id="adminPanel">
+
+    <div class="admin-box">
+
+        <h2>
+            Quiz Responses
+        </h2>
+
+        <input
+            type="password"
+            id="adminPassword"
+            placeholder="Enter password">
+
+        <button onclick="checkAdmin()">
+            View Responses
+        </button>
+
+        <button
+            onclick="closeAdmin()"
+            style="margin-left:8px;">
+            Close
+        </button>
+
+        <div id="adminResponses"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =======================================================
+     AUDIO
+======================================================= -->
+
+<audio
+    id="birthdaySong"
+    preload="auto">
+
+    <source
+        src="music/nanna_nuvvu_na_pranam.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script>
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+function goTo(id) {
+
+    document
+        .getElementById(id)
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* =========================================================
+   START BIRTHDAY
+========================================================= */
+
+function startBirthday() {
+
+    const intro =
+        document.getElementById("introScreen");
+
+    const celebration =
+        document.getElementById("celebrationScreen");
+
+    intro.style.opacity = "0";
+    intro.style.visibility = "hidden";
+
+    setTimeout(() => {
+
+        celebration.classList.add("show");
+
+        createConfetti();
+
+    }, 500);
+
+}
+
+
+/* =========================================================
+   ENTER WEBSITE
+========================================================= */
+
+function enterWebsite() {
+
+    const celebration =
+        document.getElementById("celebrationScreen");
+
+    celebration.style.opacity = "0";
+    celebration.style.visibility = "hidden";
+
+    setTimeout(() => {
+
+        celebration.style.display = "none";
+
+    }, 1000);
+
+    const audio =
+        document.getElementById("birthdaySong");
+
+    audio.play().catch(() => {
+        console.log("Audio requires user interaction.");
+    });
+
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+function createConfetti() {
+
+    for (let i = 0; i < 100; i++) {
+
+        const piece =
+            document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+        piece.style.animationDuration =
+            (Math.random() * 3 + 2) + "s";
+
+        piece.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+        piece.style.background =
+            [
+                "#c98f6b",
+                "#d9b38c",
+                "#a9795b",
+                "#e6c7ad",
+                "#8d6652",
+                "#f0d6bb"
+            ][Math.floor(Math.random() * 6)];
+
+        piece.style.transform =
+            `rotate(${Math.random() * 360}deg)`;
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => {
+            piece.remove();
+        }, 6000);
+
+    }
+
+}
+
+
+/* =========================================================
+   CINEMATIC SLIDESHOW
+========================================================= */
+
+const photos = [
+
+    "photos/photo 1.jpeg",
+    "photos/photo 2.jpeg",
+    "photos/photo 3.jpeg",
+    "photos/photo 4.jpeg",
+    "photos/photo 5.jpeg",
+    "photos/photo 6.jpeg"
+
+];
+
+
+const captions = [
+
+    "A beautiful memory ❤️",
+    "One of our special moments ✨",
+    "A moment worth remembering 🤎",
+    "Family memories forever 🥰",
+    "Another beautiful memory ❤️",
+    "Always a special one ✨"
+
+];
+
+
+let currentSlide = 0;
+
+let slideTimer;
+
+
+/* ---------------------------------------------------------
+   SHOW SLIDE
+--------------------------------------------------------- */
+
+function showSlide(index) {
+
+    if (index >= photos.length) {
+        index = 0;
+    }
+
+    if (index < 0) {
+        index = photos.length - 1;
+    }
+
+    currentSlide = index;
+
+    const image =
+        document.getElementById("slideImage");
+
+    const background =
+        document.getElementById("slideBackground");
+
+    const number =
+        document.getElementById("slideNumber");
+
+    const caption =
+        document.getElementById("slideCaption");
+
+    const dots =
+        document.querySelectorAll(".dot");
+
+
+    /* fade out */
+
+    image.classList.remove("active");
+
+    image.classList.add("enter");
+
+
+    setTimeout(() => {
+
+        image.src = photos[currentSlide];
+
+        background.style.backgroundImage =
+            `url("${photos[currentSlide]}")`;
+
+        image.onload = () => {
+
+            image.classList.remove("enter");
+
+            image.classList.add("active");
+
+        };
+
+    }, 250);
+
+
+    number.textContent =
+        `${currentSlide + 1} / ${photos.length}`;
+
+
+    caption.textContent =
+        captions[currentSlide];
+
+
+    dots.forEach((dot, i) => {
+
+        dot.classList.toggle(
+            "active",
+            i === currentSlide
+        );
+
+    });
+
+}
+
+
+/* ---------------------------------------------------------
+   CHANGE SLIDE
+--------------------------------------------------------- */
+
+function changeSlide(direction) {
+
+    showSlide(currentSlide + direction);
+
+    restartSlideshow();
+
+}
+
+
+/* ---------------------------------------------------------
+   AUTO SLIDESHOW
+--------------------------------------------------------- */
+
+function startSlideshow() {
+
+    slideTimer =
+        setInterval(() => {
+
+            showSlide(currentSlide + 1);
+
+        }, 5000);
+
+}
+
+
+function restartSlideshow() {
+
+    clearInterval(slideTimer);
+
+    startSlideshow();
+
+}
+
+
+/* =========================================================
+   INITIALIZE SLIDESHOW
+========================================================= */
+
+window.addEventListener("load", () => {
+
+    const background =
+        document.getElementById("slideBackground");
+
+    background.style.backgroundImage =
+        `url("${photos[0]}")`;
+
+    showSlide(0);
+
+    startSlideshow();
+
+});
+
+
+/* =========================================================
+   SWIPE SUPPORT FOR PHONE
+========================================================= */
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+const slideshow =
+    document.querySelector(".slideshow");
+
+
+slideshow.addEventListener(
+    "touchstart",
+    function(event) {
+
+        touchStartX =
+            event.changedTouches[0].screenX;
+
+    },
+    { passive: true }
+);
+
+
+slideshow.addEventListener(
+    "touchend",
+    function(event) {
+
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+        handleSwipe();
+
+    },
+    { passive: true }
+);
+
+
+function handleSwipe() {
+
+    const difference =
+        touchStartX - touchEndX;
+
+    if (Math.abs(difference) < 50) {
+        return;
+    }
+
+    if (difference > 0) {
+
+        changeSlide(1);
+
+    } else {
+
+        changeSlide(-1);
+
+    }
+
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+const quizAnswers = {};
+
+
+function selectOption(
+    button,
+    question,
+    answer
+) {
+
+    const buttons =
+        document.querySelectorAll(
+            `[data-question="${question}"]`
+        );
+
+
+    buttons.forEach(btn => {
+
+        btn.classList.remove("selected");
+
+    });
+
+
+    button.classList.add("selected");
+
+    quizAnswers[question] = answer;
+
+}
+
+
+function submitQuiz() {
+
+    const totalQuestions = 5;
+
+    const answered =
+        Object.keys(quizAnswers).length;
+
+
+    const message =
+        document.getElementById("quizMessage");
+
+
+    if (answered < totalQuestions) {
+
+        message.textContent =
+            `Please answer all ${totalQuestions} questions ❤️`;
+
+        return;
+
+    }
+
+
+    const response = {
+
+        time:
+            new Date().toLocaleString(),
+
+        answers:
+            { ...quizAnswers }
+
+    };
+
+
+    let responses =
+        JSON.parse(
+            localStorage.getItem(
+                "nannaQuizResponses"
+            )
+        ) || [];
+
+
+    responses.push(response);
+
+
+    localStorage.setItem(
+        "nannaQuizResponses",
+        JSON.stringify(responses)
+    );
+
+
+    message.innerHTML =
+        "Thank you, Nanna! ❤️ Your answers have been saved. 🎉";
+
+
+    document
+        .querySelector(".quiz-submit")
+        .style.display = "none";
+
+}
+
+
+/* =========================================================
+   ADMIN
+========================================================= */
+
+function openAdmin() {
+
+    document
+        .getElementById("adminPanel")
+        .style.display = "flex";
+
+}
+
+
+function closeAdmin() {
+
+    document
+        .getElementById("adminPanel")
+        .style.display = "none";
+
+}
+
+
+function checkAdmin() {
+
+    const password =
+        document.getElementById("adminPassword").value;
+
+
+    if (password !== "nanna2026") {
+
+        alert("Incorrect password.");
+
+        return;
+
+    }
+
+
+    const responses =
+        JSON.parse(
+            localStorage.getItem(
+                "nannaQuizResponses"
+            )
+        ) || [];
+
+
+    const container =
+        document.getElementById(
+            "adminResponses"
+        );
+
+
+    if (responses.length === 0) {
+
+        container.innerHTML =
+            "<p style='margin-top:20px;'>No responses yet.</p>";
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        `<p style="margin:20px 0;">
+            Total responses: ${responses.length}
+        </p>`;
+
+
+    responses.forEach((response, index) => {
+
+        const div =
+            document.createElement("div");
+
+        div.className =
+            "response-item";
+
+
+        div.innerHTML = `
+
+            <strong>
+                Response ${index + 1}
+            </strong>
+
+            <br>
+
+            <small>
+                ${response.time}
+            </small>
+
+            <br><br>
+
+            <strong>Favourite food:</strong>
+            ${response.answers.q1}
+
+            <br>
+
+            <strong>Favourite place:</strong>
+            ${response.answers.q2}
+
+            <br>
+
+            <strong>Car:</strong>
+            ${response.answers.q3}
+
+            <br>
+
+            <strong>Shirt brand:</strong>
+            ${response.answers.q4}
+
+            <br>
+
+            <strong>Sweet:</strong>
+            ${response.answers.q5}
+
+        `;
+
+
+        container.appendChild(div);
+
+    });
+
+}
+
+
+</script>
+
+</body>
+</html>
